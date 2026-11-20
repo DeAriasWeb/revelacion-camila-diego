@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2b3556">
+  <meta name="color-scheme" content="light">
+  <title>¿Niño o niña? · Camila &amp; Diego</title>
+
+  <!-- OG:START (vista previa al compartir: cambia título, descripción y la dirección de tu sitio) -->
+  <meta name="description" content="Te invitamos a descubrir con nosotros si es niño o niña. ¡Abre tu invitación!">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="¿Niño o niña? · Camila &amp; Diego">
+  <meta property="og:description" content="Te invitamos a descubrirlo con nosotros el 10 de abril de 2027. ¡Abre tu invitación!">
+  <meta property="og:image" content="https://TU-DOMINIO.vercel.app/assets/images/vista-previa.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://TU-DOMINIO.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="¿Niño o niña? · Camila &amp; Diego">
+  <meta name="twitter:description" content="Te invitamos a descubrirlo con nosotros el 10 de abril de 2027. ¡Abre tu invitación!">
+  <meta name="twitter:image" content="https://TU-DOMINIO.vercel.app/assets/images/vista-previa.jpg">
+  <!-- OG:END -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Nunito:wght@400;600;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/envelope.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/experiences.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="is-locked">
+
+  <!-- =====================================================================
+       PANTALLA 1 · SOBRE ANIMADO
+       ===================================================================== -->
+  <section id="sobre" class="sobre" aria-label="Sobre de invitación">
+    <div class="sobre__bg"><img data-img="sobre" data-w="1200" fetchpriority="high" alt=""></div>
+    <div class="sobre__shade"></div>
+    <canvas class="sobre__dust" id="dust" aria-hidden="true"></canvas>
+
+    <header class="sobre__top">
+      <span class="orn orn--sm" aria-hidden="true"></span>
+      <p class="sobre__kicker" data-t="texts.envelopeKicker"></p>
+    </header>
+
+    <button class="env" id="envBtn" type="button" aria-label="Abrir invitación">
+      <div class="env__stage" id="envStage">
+        <div class="env__back"></div>
+
+        <div class="env__card" id="envCard">
+          <div class="env__card-photo"><img data-img="carta" data-w="700" fetchpriority="high" alt=""></div>
+          <div class="env__card-body">
+            <span class="env__card-kicker" data-t="texts.heroKicker"></span>
+            <span class="env__card-names" data-t="names.together"></span>
+            <span class="env__card-rule"></span>
+            <span class="env__card-date" data-t="date.display"></span>
+          </div>
+        </div>
+
+        <div class="env__front"></div>
+
+        <div class="env__flap" id="envFlap">
+          <div class="env__flap-out"></div>
+          <div class="env__flap-in"></div>
+        </div>
+
+        <div class="env__seal" id="envSeal" aria-hidden="true">
+          <div class="seal__half seal__half--l"><span class="seal__disc"><span class="seal__ring"></span><span class="seal__ini" data-t="names.initials"></span></span></div>
+          <div class="seal__half seal__half--r"><span class="seal__disc"><span class="seal__ring"></span><span class="seal__ini" data-t="names.initials"></span></span></div>
+        </div>
+      </div>
+    </button>
+
+    <p class="sobre__hint" id="envHint"><span data-t="texts.envelopeHint"></span><i aria-hidden="true"></i></p>
+  </section>
+
+  <!-- =====================================================================
+       PANTALLA 2 · INVITACIÓN COMPLETA
+       ===================================================================== -->
+  <main id="invitacion" class="inv" aria-hidden="true">
+
+    <!-- Portada -->
+    <section class="hero" id="hero">
+      <div class="hero__blob hero__blob--pink" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--blue" aria-hidden="true"></div>
+      <canvas class="hero__sparkle" id="heroSpark" aria-hidden="true"></canvas>
+      <div class="hero__content">
+        <p class="kicker hero__kicker" data-t="texts.heroKicker"></p>
+        <div class="hero__duo">
+          <span class="hero__ring" aria-hidden="true"></span>
+          <div class="hero__photo"><img data-img="portada" data-w="800" fetchpriority="high" alt=""></div>
+          <span class="hero__q hero__q--l" aria-hidden="true">?</span>
+          <span class="hero__q hero__q--r" aria-hidden="true">?</span>
+        </div>
+        <h1 class="hero__title">
+          <span class="hero__w hero__w--boy" data-t="texts.heroBoy"></span>
+          <span class="hero__or" data-t="texts.heroOr"></span>
+          <span class="hero__w hero__w--girl" data-t="texts.heroGirl"></span>
+        </h1>
+        <p class="hero__names" data-t="names.together"></p>
+        <p class="hero__date"><span class="rule"></span><span data-t="date.display"></span><span class="rule"></span></p>
+      </div>
+      <div class="hero__scroll" aria-hidden="true"><span data-t="texts.heroScroll"></span><i></i></div>
+    </section>
+
+    <!-- Frase -->
+    <section class="quote" id="frase">
+      <figure class="blob reveal">
+        <div class="blob__ph"><img data-img="frase" data-w="800" alt=""></div>
+        <span class="blob__dot blob__dot--p" aria-hidden="true"></span>
+        <span class="blob__dot blob__dot--b" aria-hidden="true"></span>
+      </figure>
+      <div class="quote__text">
+        <p class="kicker reveal" data-t="texts.quoteKicker"></p>
+        <blockquote class="reveal" data-t="texts.quote"></blockquote>
+        <p class="quote__sign reveal" data-t="texts.quoteSign"></p>
+      </div>
+    </section>
+
+    <!-- Cuenta regresiva -->
+    <section class="countdown" id="cuenta">
+      <div class="countdown__bg"><img data-img="cuenta" data-w="1200" alt=""></div>
+      <div class="countdown__shade"></div>
+      <div class="countdown__inner">
+        <p class="kicker kicker--light reveal" data-t="texts.countdownKicker"></p>
+        <h2 class="display display--light reveal" id="cdTitle" data-t="texts.countdownTitle"></h2>
+        <div class="cd reveal" id="cd" role="timer" aria-live="off">
+          <div class="cd__cell"><b id="cdD">00</b><span data-t="texts.labels.days"></span></div>
+          <div class="cd__cell"><b id="cdH">00</b><span data-t="texts.labels.hours"></span></div>
+          <div class="cd__cell"><b id="cdM">00</b><span data-t="texts.labels.minutes"></span></div>
+          <div class="cd__cell"><b id="cdS">00</b><span data-t="texts.labels.seconds"></span></div>
+        </div>
+        <p class="cd__date reveal" data-t="date.long"></p>
+        <button class="link-btn link-btn--light reveal" id="icsBtn" type="button"><span data-t="texts.calendarBtn"></span></button>
+      </div>
+    </section>
+
+    <!-- EFECTO 1 · Tendedero de fotos -->
+    <section class="exp exp--cream" id="tendedero">
+      <header class="exp__head">
+        <p class="kicker reveal" data-t="texts.lineKicker"></p>
+        <h2 class="display reveal" data-t="texts.lineTitle"></h2>
+      </header>
+      <div class="line reveal" id="line"><div class="line__track" id="lineTrack"></div></div>
+      <div class="exp__foot"><p class="hint"><span data-t="texts.lineHint"></span></p></div>
+    </section>
+
+    <!-- EFECTO 2 · Cartas que voltean -->
+    <section class="exp exp--pink" id="voltea">
+      <header class="exp__head">
+        <p class="kicker reveal" data-t="texts.flipKicker"></p>
+        <h2 class="display reveal" data-t="texts.flipTitle"></h2>
+      </header>
+      <div class="flips reveal" id="flips"></div>
+      <div class="exp__foot">
+        <p class="hint"><span data-t="texts.flipHint"></span></p>
+        <button class="link-btn" id="flipBtn" type="button"><span data-t="texts.flipBtn"></span></button>
+      </div>
+    </section>
+
+    <!-- EFECTO 3 · Globos que revientan -->
+    <section class="exp exp--blue" id="globos">
+      <header class="exp__head">
+        <p class="kicker reveal" data-t="texts.popKicker"></p>
+        <h2 class="display reveal" data-t="texts.popTitle"></h2>
+      </header>
+      <div class="pops reveal" id="pops"></div>
+      <div class="exp__foot">
+        <p class="hint"><span data-t="texts.popHint"></span></p>
+        <button class="link-btn" id="popBtn" type="button"><span data-t="texts.popBtn"></span></button>
+      </div>
+    </section>
+
+    <!-- EFECTO 4 · Mamá y papá (barra deslizante) -->
+    <section class="exp exp--ink" id="duo">
+      <header class="exp__head">
+        <p class="kicker kicker--light reveal" data-t="texts.duoKicker"></p>
+        <h2 class="display display--light reveal" data-t="texts.duoTitle"></h2>
+      </header>
+      <div class="duo reveal" id="duoBox" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Comparar mamá y papá">
+        <div class="duo__img duo__img--b"></div>
+        <div class="duo__img duo__img--a" id="duoTop"></div>
+        <span class="duo__tag duo__tag--l" data-t="texts.duoLeft"></span>
+        <span class="duo__tag duo__tag--r" data-t="texts.duoRight"></span>
+        <div class="duo__bar" id="duoBar"><span class="duo__knob" aria-hidden="true"><i></i></span></div>
+      </div>
+      <div class="exp__foot"><p class="hint hint--light"><span data-t="texts.duoHint"></span></p></div>
+    </section>
+
+    <!-- EFECTO 5 · Cinta infinita -->
+    <section class="exp exp--butter" id="cinta">
+      <header class="exp__head">
+        <p class="kicker reveal" data-t="texts.beltKicker"></p>
+        <h2 class="display reveal" data-t="texts.beltTitle"></h2>
+      </header>
+      <div class="belt reveal" id="belt"></div>
+      <div class="exp__foot"><p class="hint"><span data-t="texts.beltHint"></span></p></div>
+    </section>
+
+    <!-- Programa / información del evento -->
+    <section class="info" id="programa">
+      <header class="info__head">
+        <p class="kicker reveal" data-t="texts.infoKicker"></p>
+        <h2 class="display reveal" data-t="texts.infoTitle"></h2>
+      </header>
+      <ol class="timeline" id="timeline"></ol>
+      <aside class="dress reveal">
+        <span class="orn" aria-hidden="true"></span>
+        <p class="kicker" data-t="texts.dressKicker"></p>
+        <p class="dress__text" data-t="texts.dress"></p>
+      </aside>
+    </section>
+
+    <!-- Ubicación -->
+    <section class="place" id="lugar">
+      <div class="place__bg"><img data-img="ubicacion" data-w="1400" alt=""></div>
+      <div class="place__shade"></div>
+      <div class="place__inner">
+        <svg class="place__pin reveal" viewBox="0 0 24 32" width="30" height="40" aria-hidden="true"><path d="M12 1.5c5.8 0 10.5 4.6 10.5 10.3C22.5 19.6 12 30.5 12 30.5S1.5 19.6 1.5 11.8C1.5 6.1 6.2 1.5 12 1.5Z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="11.8" r="3.6" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+        <p class="kicker kicker--light reveal" data-t="texts.placeKicker"></p>
+        <h2 class="display display--light reveal" data-t="location.name"></h2>
+        <p class="place__addr reveal" data-t="location.address"></p>
+        <a class="btn-pill reveal" id="mapBtn" target="_blank" rel="noopener"><span data-t="texts.mapBtn"></span><i aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+    <!-- Confirmación -->
+    <section class="rsvp" id="rsvp">
+      <header class="rsvp__head">
+        <p class="kicker reveal" data-t="texts.rsvpKicker"></p>
+        <h2 class="display reveal" data-t="texts.rsvpTitle"></h2>
+        <p class="rsvp__lead reveal" data-t="texts.rsvpText"></p>
+      </header>
+
+      <form class="form reveal" id="rsvpForm" novalidate>
+        <label class="field">
+          <span class="field__label" data-t="texts.rsvpName"></span>
+          <input type="text" id="rsvpName" name="name" autocomplete="name" required>
+          <span class="field__err" id="errName" role="alert"></span>
+        </label>
+
+        <div class="field">
+          <span class="field__label" data-t="texts.rsvpGuests"></span>
+          <div class="stepper">
+            <button type="button" id="gMinus" aria-label="Menos">−</button>
+            <output id="gOut" aria-live="polite">1</output>
+            <button type="button" id="gPlus" aria-label="Más">+</button>
+          </div>
+        </div>
+
+        <fieldset class="field guess" id="guessBox">
+          <legend class="guess__label" data-t="texts.guess.label"></legend>
+          <p class="guess__sub" data-t="texts.guess.sub"></p>
+          <div class="guess__row">
+            <button type="button" class="guess__btn guess__btn--girl" data-guess="Niña" aria-pressed="false"><span class="guess__bub"><b data-t="texts.guess.girl"></b></span></button>
+            <button type="button" class="guess__btn guess__btn--boy" data-guess="Niño" aria-pressed="false"><span class="guess__bub"><b data-t="texts.guess.boy"></b></span></button>
+          </div>
+          <p class="guess__say" id="guessSay" role="status" aria-live="polite"><span data-t="texts.guess.pick"></span></p>
+        </fieldset>
+
+        <fieldset class="field choice">
+          <label class="choice__opt"><input type="radio" name="att" value="yes"><span data-t="texts.rsvpYes"></span></label>
+          <label class="choice__opt"><input type="radio" name="att" value="no"><span data-t="texts.rsvpNo"></span></label>
+          <span class="field__err" id="errChoice" role="alert"></span>
+        </fieldset>
+
+        <label class="field">
+          <span class="field__label" data-t="texts.rsvpMsg"></span>
+          <textarea id="rsvpMsg" name="msg" rows="2"></textarea>
+        </label>
+
+        <p class="form__status" id="rsvpStatus" role="status" aria-live="polite"></p>
+        <button class="btn-solid" type="submit" id="rsvpSubmit"><span data-t="texts.rsvpBtn"></span></button>
+      </form>
+    </section>
+
+    <!-- Agradecimiento -->
+    <section class="thanks" id="gracias">
+      <div class="thanks__bg"><img data-img="gracias" data-w="1200" alt=""></div>
+      <div class="thanks__shade"></div>
+      <div class="thanks__inner">
+        <p class="thanks__script reveal" data-t="texts.thanksKicker"></p>
+        <h2 class="thanks__title reveal" data-t="texts.thanksTitle"></h2>
+        <p class="thanks__text reveal" data-t="texts.thanksText"></p>
+        <span class="orn orn--light reveal" aria-hidden="true"></span>
+        <p class="thanks__sign reveal" data-t="texts.thanksSign"></p>
+      </div>
+    </section>
+
+    <!-- Caja sorpresa -->
+    <section class="box" id="sorpresa">
+      <header class="exp__head box__head">
+        <p class="kicker reveal" data-t="texts.boxKicker"></p>
+        <h2 class="display reveal" data-t="texts.boxTitle"></h2>
+      </header>
+      <button class="gift reveal" id="gift" type="button" aria-expanded="false" aria-label="Abrir la caja sorpresa">
+        <span class="gift__shadow" aria-hidden="true"></span>
+        <span class="gift__msg" aria-live="polite"><b data-t="texts.boxReveal"></b><em data-t="texts.boxReveal2"></em></span>
+        <span class="gift__q" aria-hidden="true">?</span>
+        <span class="gift__body" aria-hidden="true"><i class="gift__rib gift__rib--v"></i></span>
+        <span class="gift__lid" aria-hidden="true"><i class="gift__rib gift__rib--v"></i><i class="gift__bow"><u></u><u></u></i></span>
+      </button>
+      <p class="hint box__hint" id="giftHint"><span data-t="texts.boxHint"></span></p>
+    </section>
+  </main>
+
+  <!-- Acceso de organizadores: doble toque en la última foto -->
+  <div class="pin" id="pin" hidden role="dialog" aria-modal="true" aria-labelledby="pinTitle">
+    <div class="pin__backdrop" data-close></div>
+    <div class="pin__box">
+      <button class="pin__x" type="button" data-close aria-label="Cerrar">&times;</button>
+      <span class="orn" aria-hidden="true"></span>
+      <h3 class="pin__title" id="pinTitle" data-t="texts.admin.pinTitle"></h3>
+      <p class="pin__lead" data-t="texts.admin.pinLead"></p>
+      <div class="pin__digits" id="pinDigits">
+        <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Dígito 1">
+        <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Dígito 2">
+        <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Dígito 3">
+        <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Dígito 4">
+      </div>
+      <p class="pin__msg" id="pinMsg" role="alert"></p>
+    </div>
+  </div>
+
+  <!-- Panel de invitados (datos desde Google Sheets) -->
+  <section class="admin" id="admin" hidden aria-label="Invitados">
+    <div class="admin__inner">
+      <header class="admin__head">
+        <p class="kicker kicker--light" data-t="names.together"></p>
+        <h2 class="display display--light" data-t="texts.admin.title"></h2>
+      </header>
+      <div class="admin__stats" id="adminStats"></div>
+      <ul class="admin__list" id="adminList"></ul>
+      <div class="admin__actions">
+        <button class="link-btn link-btn--light" type="button" id="adminRefresh"><span data-t="texts.admin.refresh"></span></button>
+        <button class="link-btn link-btn--light" type="button" id="adminExit"><span data-t="texts.admin.exit"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Música -->
+  <button class="music" id="musicBtn" type="button" aria-label="Activar música" aria-pressed="false" hidden>
+    <span class="music__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  </button>
+  <audio id="bgm" preload="none" loop></audio>
+
+  <!-- Configuración y lógica (scripts clásicos: funciona también abriendo index.html directamente) -->
+  <script src="js/config/event.js"></script>
+  <script src="js/core/images.js"></script>
+  <script src="js/core/app.js"></script>
+  <script src="js/core/fullscreen.js"></script>
+  <script src="js/core/countdown.js"></script>
+  <script src="js/core/music.js"></script>
+  <script src="js/core/sparkle.js"></script>
+  <script src="js/core/confetti.js"></script>
+  <script src="js/core/reveal.js"></script>
+  <script src="js/core/admin.js"></script>
+  <script src="js/envelope.js"></script>
+  <script src="js/experiences/tendedero.js"></script>
+  <script src="js/experiences/voltea.js"></script>
+  <script src="js/experiences/globos.js"></script>
+  <script src="js/experiences/duo.js"></script>
+  <script src="js/experiences/cinta.js"></script>
+  <script src="js/experiences/caja.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
