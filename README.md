@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Revelación de género · Camila & Diego (proyecto demo)
 
 Invitación digital con sobre animado, pantalla completa, cinco efectos de fotos, apuesta «niño / niña»
@@ -26,3 +27,6 @@ guardada en Google Sheets, caja sorpresa y panel privado de invitados (PIN con d
 ## Los cinco efectos
 Tendedero de polaroids · Cartas que voltean · Globos que revientan · Barra mamá/papá · Cinta infinita.
 Más: apuesta niño/niña con serpentinas y caja sorpresa final.
+=======
+# revelacion-camila-diego
+>>>>>>> a70a536796011e22ccbfc257425da0fa87442b01
